@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- ═══ PRIMARY SEO ═══ -->
+  <title>Gabot — Bot de WhatsApp con IA para Restaurantes | Automatiza Pedidos 24/7</title>
+  <meta name="description" content="Gabot es el bot de WhatsApp con IA que automatiza los pedidos de tu restaurante 24/7. Gestiona más de 500 pedidos/día, reduce errores y aumenta tus ingresos — configúralo en menos de 30 minutos. Comienza gratis." />
+  <meta name="keywords" content="bot IA restaurante, bot de pedidos WhatsApp, automatización restaurante, IA para pedidos de comida, chatbot para restaurantes, bot WhatsApp business, sistema de pedidos restaurante, toma de pedidos automatizada" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Gabot AI" />
+  <link rel="canonical" href="https://gabot.ai/" />
+
+  <!-- ═══ OPEN GRAPH ═══ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gabot.ai/" />
+  <meta property="og:title" content="Gabot — Bot de WhatsApp con IA que Nunca Pierde un Pedido" />
+  <meta property="og:description" content="Automatiza los pedidos de WhatsApp de tu restaurante con IA que habla con naturalidad. 500+ pedidos/día, 98% de precisión, cero pedidos perdidos. Configúralo en 30 minutos." />
+  <meta property="og:image" content="https://gabot.ai/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Gabot AI" />
+  <meta property="og:locale" content="es_ES" />
+
+  <!-- ═══ TWITTER CARD ═══ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@gabotai" />
+  <meta name="twitter:title" content="Gabot — Bot de WhatsApp con IA para Restaurantes" />
+  <meta name="twitter:description" content="El mejor empleado de tu restaurante — nunca duerme, nunca olvida un pedido. Pedidos por WhatsApp con IA que funciona 24/7." />
+  <meta name="twitter:image" content="https://gabot.ai/og-image.png" />
+
+  <!-- ═══ STRUCTURED DATA ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://gabot.ai/#organization",
+        "name": "Gabot AI",
+        "url": "https://gabot.ai",
+        "logo": { "@type": "ImageObject", "url": "https://gabot.ai/logo.png" },
+        "description": "Automatización de pedidos por WhatsApp con IA para restaurantes",
+        "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "email": "hello@gabot.ai" },
+        "sameAs": ["https://twitter.com/gabotai"]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://gabot.ai/#software",
+        "name": "Gabot",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, WhatsApp",
+        "url": "https://gabot.ai",
+        "description": "Bot de WhatsApp con IA que automatiza la toma de pedidos en restaurantes 24/7.",
+        "offers": [
+          { "@type": "Offer", "name": "Starter", "price": "29", "priceCurrency": "USD", "billingDuration": "P1M" },
+          { "@type": "Offer", "name": "Professional", "price": "79", "priceCurrency": "USD", "billingDuration": "P1M" }
+        ],
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "400", "bestRating": "5" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Cuánto tiempo tarda la configuración de Gabot?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Gabot puede estar funcionando en menos de 15 minutos. Solo sube el PDF de tu menú, conecta tu cuenta de WhatsApp Business y la IA empieza a tomar pedidos de inmediato." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Gabot funciona con mi sistema POS existente?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Sí. Gabot se integra directamente con tu POS o panel personalizado para procesar pagos y enviar pedidos en tiempo real. Disponible en los planes Professional y Enterprise." }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Hay una prueba gratuita?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Sí, Gabot ofrece una prueba gratuita para que puedas experimentar todo el poder de la automatización de pedidos con IA antes de comprometerte con un plan." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══ FONTS ═══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+
+  <!-- ═══ TAILWIND ═══ -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container":         "#e5eeff",
+            "surface":                   "#f8f9ff",
+            "surface-container-high":    "#dce9ff",
+            "primary-container":         "#2170e4",
+            "on-tertiary-container":     "#fbfdff",
+            "background":                "#f8f9ff",
+            "on-secondary-container":    "#586377",
+            "on-secondary":              "#ffffff",
+            "primary-fixed":             "#d8e2ff",
+            "tertiary-fixed-dim":        "#c4c7c9",
+            "secondary-container":       "#d5e0f8",
+            "tertiary-container":        "#727577",
+            "on-primary":                "#ffffff",
+            "on-tertiary":               "#ffffff",
+            "primary":                   "#0058be",
+            "surface-dim":               "#cbdbf5",
+            "on-tertiary-fixed-variant": "#444749",
+            "on-secondary-fixed-variant":"#3c475a",
+            "primary-fixed-dim":         "#adc6ff",
+            "on-primary-container":      "#fefcff",
+            "on-secondary-fixed":        "#111c2d",
+            "surface-variant":           "#d3e4fe",
+            "secondary":                 "#545f73",
+            "on-background":             "#0b1c30",
+            "on-surface":                "#0b1c30",
+            "on-error-container":        "#93000a",
+            "tertiary":                  "#595c5e",
+            "secondary-fixed-dim":       "#bcc7de",
+            "outline-variant":           "#c2c6d6",
+            "surface-container-highest": "#d3e4fe",
+            "secondary-fixed":           "#d8e3fb",
+            "error-container":           "#ffdad6",
+            "inverse-surface":           "#213145",
+            "on-primary-fixed-variant":  "#004395",
+            "on-primary-fixed":          "#001a42",
+            "tertiary-fixed":            "#e0e3e5",
+            "on-surface-variant":        "#424754",
+            "surface-container-lowest":  "#ffffff",
+            "on-tertiary-fixed":         "#191c1e",
+            "surface-container-low":     "#eff4ff",
+            "inverse-on-surface":        "#eaf1ff",
+            "on-error":                  "#ffffff",
+            "inverse-primary":           "#adc6ff",
+            "surface-tint":              "#005ac2",
+            "surface-bright":            "#f8f9ff",
+            "outline":                   "#727785",
+            "error":                     "#ba1a1a"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg":      "0.5rem",
+            "xl":      "0.75rem",
+            "2xl":     "1rem",
+            "3xl":     "1.5rem",
+            "full":    "9999px"
+          },
+          spacing: {
+            "base":           "8px",
+            "sm":             "12px",
+            "margin-mobile":  "16px",
+            "margin-desktop": "48px",
+            "xs":             "4px",
+            "gutter":         "24px",
+            "md":             "24px",
+            "lg":             "48px",
+            "xl":             "80px"
+          },
+          fontFamily: {
+            "headline-xl": ["Space Grotesk", "sans-serif"],
+            "headline-lg": ["Space Grotesk", "sans-serif"],
+            "headline-md": ["Space Grotesk", "sans-serif"],
+            "headline-sm": ["Space Grotesk", "sans-serif"],
+            "label-md":    ["Space Grotesk", "sans-serif"],
+            "label-sm":    ["Space Grotesk", "sans-serif"],
+            "body-lg":     ["Inter", "sans-serif"],
+            "body-md":     ["Inter", "sans-serif"],
+            "body-sm":     ["Inter", "sans-serif"]
+          },
+          fontSize: {
+            "headline-xl": ["40px",  { lineHeight: "48px",  letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-lg": ["32px",  { lineHeight: "40px",  letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-md": ["24px",  { lineHeight: "32px",  fontWeight: "600" }],
+            "headline-sm": ["20px",  { lineHeight: "28px",  fontWeight: "500" }],
+            "label-md":    ["14px",  { lineHeight: "16px",  letterSpacing: "0.05em", fontWeight: "500" }],
+            "label-sm":    ["12px",  { lineHeight: "14px",  fontWeight: "500" }],
+            "body-lg":     ["18px",  { lineHeight: "28px",  fontWeight: "400" }],
+            "body-md":     ["16px",  { lineHeight: "24px",  fontWeight: "400" }],
+            "body-sm":     ["14px",  { lineHeight: "20px",  fontWeight: "400" }]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #f8f9ff;
+      background-image: radial-gradient(circle at 1px 1px, #cbd5e1 1px, transparent 0);
+      background-size: 40px 40px;
+      scroll-behavior: smooth;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      font-style: normal;
+    }
+    .material-symbols-outlined.filled {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .circuit-line {
+      background: linear-gradient(90deg, #0058be 50%, transparent 50%);
+      background-size: 20px 1px;
+    }
+    .glass-nav {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .bento-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .bento-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px -10px rgba(0, 88, 190, 0.15);
+    }
+    .step-connector::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      width: 100%;
+      height: 2px;
+      background: #d3e4fe;
+      z-index: -1;
+    }
+    @media (max-width: 768px) {
+      .step-connector::after { display: none; }
+    }
+    .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+  </style>
+</head>
+<body class="font-body-md text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav id="main-nav" class="glass-nav fixed top-0 w-full z-50 bg-surface/80 border-b border-outline-variant/30 shadow-sm" role="navigation" aria-label="Navegación principal">
+  <div class="flex justify-between items-center h-16 md:h-20 px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2" aria-label="Gabot — Inicio">
+      <span class="material-symbols-outlined filled text-primary text-headline-md">smart_toy</span>
+      <span class="font-headline-md text-headline-md font-bold text-primary">Gabot</span>
+    </a>
+
+    <!-- Desktop links -->
+    <div class="hidden md:flex items-center gap-lg" role="menubar">
+      <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#features" role="menuitem">Características</a>
+      <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#how-it-works" role="menuitem">Cómo Funciona</a>
+      <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#pricing" role="menuitem">Precios</a>
+      <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#testimonials" role="menuitem">Testimonios</a>
+    </div>
+
+    <!-- Desktop actions -->
+    <div class="hidden md:flex items-center gap-md">
+      <button class="font-label-md text-label-md text-on-surface-variant px-md py-base hover:text-primary transition-colors">Iniciar Sesión</button>
+      <a href="#contact" class="bg-primary text-on-primary font-label-md text-label-md px-lg py-base rounded-lg shadow-sm hover:opacity-90 transition-all">Empezar Ahora</a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button id="nav-toggle" class="md:hidden text-on-surface-variant hover:text-primary transition-colors p-2" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+
+  <!-- Mobile dropdown menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-surface/95 backdrop-blur-md border-t border-outline-variant/30 px-margin-mobile py-md" role="menu">
+    <div class="flex flex-col gap-sm">
+      <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary py-sm transition-colors" href="#features" role="menuitem">Características</a>
+      <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary py-sm transition-colors" href="#how-it-works" role="menuitem">Cómo Funciona</a>
+      <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary py-sm transition-colors" href="#pricing" role="menuitem">Precios</a>
+      <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary py-sm transition-colors" href="#testimonials" role="menuitem">Testimonios</a>
+      <a href="#contact" class="mt-sm bg-primary text-on-primary font-label-md text-label-md px-lg py-base rounded-lg text-center hover:opacity-90 transition-all">Empezar Ahora</a>
+    </div>
+  </div>
+</nav>
+
+<main class="pt-16 md:pt-20 pb-20 md:pb-0" id="main-content">
+
+<!-- ═══ HERO ═══ -->
+<section class="relative min-h-[calc(100vh-5rem)] flex items-center overflow-hidden" id="hero" aria-labelledby="hero-heading">
+  <div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-xl items-center py-xl">
+
+    <!-- Left: copy -->
+    <div class="flex flex-col gap-lg z-10">
+      <div class="inline-flex items-center gap-xs bg-primary-fixed text-on-primary-fixed-variant px-sm py-1 rounded-full w-fit">
+        <span class="material-symbols-outlined text-[16px]">verified</span>
+        <span class="font-label-sm text-label-sm uppercase tracking-wider">IA con Seguridad Empresarial</span>
+      </div>
+
+      <h1 id="hero-heading" class="font-headline-xl text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] leading-[1.1] text-on-background">
+        El mejor empleado de tu restaurante —
+        <span class="text-primary">nunca duerme, nunca olvida un pedido.</span>
+      </h1>
+
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-[500px]">
+        Gabot automatiza el flujo de pedidos de WhatsApp con IA que entiende lenguaje natural, gestiona tu menú y se sincroniza con tu POS al instante.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-md">
+        <a href="#contact" class="bg-primary text-on-primary font-label-md text-label-md px-xl py-md rounded-xl shadow-md hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-sm">
+          Comenzar Prueba Gratuita
+          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </a>
+        <a href="#how-it-works" class="border-2 border-primary text-primary font-label-md text-label-md px-xl py-md rounded-xl hover:bg-primary/5 transition-all flex items-center justify-center gap-sm">
+          Ver Demo
+          <span class="material-symbols-outlined text-[18px]">play_circle</span>
+        </a>
+      </div>
+
+      <!-- Trust signals -->
+      <div class="flex flex-wrap items-center gap-md text-body-sm text-on-surface-variant" aria-label="Indicadores de confianza">
+        <span class="flex items-center gap-xs"><span class="material-symbols-outlined text-primary text-[16px]">check_circle</span> Sin tarjeta de crédito</span>
+        <span class="flex items-center gap-xs"><span class="material-symbols-outlined text-primary text-[16px]">check_circle</span> Configuración en 15 min</span>
+        <span class="flex items-center gap-xs"><span class="material-symbols-outlined text-primary text-[16px]">check_circle</span> Cancela cuando quieras</span>
+      </div>
+    </div>
+
+    <!-- Right: phone mockup -->
+    <div class="relative flex justify-center items-center">
+      <div class="relative w-full max-w-[300px] md:max-w-[360px] aspect-[9/19] bg-on-surface rounded-[3rem] p-3 shadow-2xl border-4 border-surface-container-highest mx-auto" role="img" aria-label="Demo de WhatsApp con Gabot tomando un pedido de hamburguesa">
+        <div class="w-full h-full bg-white rounded-[2.5rem] overflow-hidden flex flex-col">
+          <!-- WhatsApp Header -->
+          <div class="bg-[#075e54] px-md py-sm flex items-center gap-sm text-white">
+            <div class="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined filled text-[20px]">smart_toy</span>
+            </div>
+            <div>
+              <p class="text-[13px] font-bold leading-none">Asistente Gabot</p>
+              <p class="text-[10px] opacity-80 mt-0.5">en línea</p>
+            </div>
+          </div>
+          <!-- Chat -->
+          <div class="flex-1 bg-[#e5ddd5] px-sm py-md space-y-sm overflow-hidden" role="log">
+            <div class="bg-white px-sm py-xs rounded-lg rounded-tl-none shadow-sm max-w-[82%]">
+              <p class="text-[12px] leading-snug">¡Bienvenido a Burger House! 🍔 ¿Qué puedo ofrecerte hoy?</p>
+            </div>
+            <div class="bg-[#dcf8c6] px-sm py-xs rounded-lg rounded-tr-none shadow-sm max-w-[82%] ml-auto">
+              <p class="text-[12px] leading-snug">Quiero una hamburguesa doble con extra de pepinillos y sin cebolla.</p>
+            </div>
+            <div class="bg-white px-sm py-xs rounded-lg rounded-tl-none shadow-sm max-w-[85%]">
+              <p class="text-[12px] leading-snug">¡Listo! 1× Hamburguesa Doble (+Pepini., −Cebolla) — ¿Agregas papas y bebida por $4.99?</p>
+            </div>
+            <div class="bg-[#dcf8c6] px-sm py-xs rounded-lg rounded-tr-none shadow-sm max-w-[60%] ml-auto">
+              <p class="text-[12px] leading-snug">Sí, perfecto. Confirmar.</p>
+            </div>
+            <div class="bg-white px-sm py-xs rounded-lg rounded-tl-none shadow-sm max-w-[82%]">
+              <p class="text-[12px] leading-snug">✅ Pedido confirmado. Total: <strong>$18.99</strong>. Tiempo estimado: 25 min.</p>
+            </div>
+          </div>
+          <!-- Status bar -->
+          <div class="w-full px-md py-sm bg-white/90 border-t border-outline-variant/30 flex items-center gap-sm">
+            <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined filled text-primary text-[18px]">smart_toy</span>
+            </div>
+            <div>
+              <div class="text-[11px] font-bold text-on-surface leading-none">Gabot AI</div>
+              <div class="text-[10px] text-green-600 mt-0.5">● En línea y listo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Ambient glow -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/8 rounded-full blur-3xl -z-10" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATS BAR ═══ -->
+<section class="bg-surface-container py-lg" id="stats" aria-labelledby="stats-heading">
+  <h2 id="stats-heading" class="sr-only">Métricas clave de rendimiento</h2>
+  <div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-xl">
+    <div class="flex flex-col items-center gap-xs text-center">
+      <span class="font-headline-lg text-headline-lg text-primary" aria-label="Más de 500 pedidos diarios">500+</span>
+      <span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Pedidos Diarios</span>
+    </div>
+    <div class="flex flex-col items-center gap-xs text-center">
+      <span class="font-headline-lg text-headline-lg text-primary" aria-label="1.2 segundos de tiempo de respuesta">1.2s</span>
+      <span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Tiempo de Respuesta</span>
+    </div>
+    <div class="flex flex-col items-center gap-xs text-center">
+      <span class="font-headline-lg text-headline-lg text-primary" aria-label="98 por ciento de precisión">98%</span>
+      <span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Tasa de Precisión</span>
+    </div>
+    <div class="flex flex-col items-center gap-xs text-center">
+      <span class="font-headline-lg text-headline-lg text-primary" aria-label="15 mil comensales felices">15k</span>
+      <span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Comensales Felices</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FEATURES ═══ -->
+<section class="py-xl bg-surface-container-lowest" id="features" aria-labelledby="features-heading">
+  <div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+    <div class="text-center mb-xl">
+      <p class="font-label-md text-label-md text-primary uppercase tracking-widest mb-md">Capacidades del Sistema</p>
+      <h2 id="features-heading" class="font-headline-lg text-headline-lg text-on-surface mb-md">Ingeniería de Precisión para Hostelería</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
+        Hemos combinado NLP avanzado con lógica especializada en restaurantes para crear el camarero digital más confiable del mercado.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-md" role="list">
+      <div class="bento-card p-lg rounded-2xl bg-white border border-outline-variant/30 flex flex-col gap-md" role="listitem">
+        <div class="w-12 h-12 rounded-xl bg-primary/8 flex items-center justify-center">
+          <span class="material-symbols-outlined text-primary">shopping_cart_checkout</span>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface">Toma pedidos automáticamente</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Se integra con tu POS para procesar pedidos directamente desde WhatsApp sin intervención humana.</p>
+      </div>
+
+      <div class="bento-card p-lg rounded-2xl bg-white border border-outline-variant/30 flex flex-col gap-md" role="listitem">
+        <div class="w-12 h-12 rounded-xl bg-primary/8 flex items-center justify-center">
+          <span class="material-symbols-outlined text-primary">menu_book</span>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface">Conoce tu menú a la perfección</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Sube un PDF o enlace, y Gabot entenderá restricciones dietéticas, alérgenos y disponibilidad en tiempo real.</p>
+      </div>
+
+      <div class="bento-card p-lg rounded-2xl bg-white border border-outline-variant/30 flex flex-col gap-md" role="listitem">
+        <div class="w-12 h-12 rounded-xl bg-primary/8 flex items-center justify-center">
+          <span class="material-symbols-outlined text-primary">update</span>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface">Funciona 24/7</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Tu negocio nunca cierra. Acepta pre-pedidos para el desayuno mientras tu equipo aún duerme.</p>
+      </div>
+
+      <div class="bento-card p-lg rounded-2xl bg-white border border-outline-variant/30 flex flex-col gap-md" role="listitem">
+        <div class="w-12 h-12 rounded-xl bg-primary/8 flex items-center justify-center">
+          <span class="material-symbols-outlined text-primary">dashboard</span>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface">Panel de Administración</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Visibilidad completa de cada conversación, métricas de pedidos y comportamiento del cliente desde una consola central.</p>
+      </div>
+
+      <div class="bento-card p-lg rounded-2xl bg-white border border-outline-variant/30 flex flex-col gap-md" role="listitem">
+        <div class="w-12 h-12 rounded-xl bg-primary/8 flex items-center justify-center">
+          <span class="material-symbols-outlined text-primary">flash_on</span>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface">Configuración en 15 Minutos</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Pasa de cero a estar activo en menos de 15 minutos. Sin código ni claves API complejas para la integración básica.</p>
+      </div>
+
+      <div class="bento-card p-lg rounded-2xl bg-white border border-outline-variant/30 flex flex-col gap-md" role="listitem">
+        <div class="w-12 h-12 rounded-xl bg-primary/8 flex items-center justify-center">
+          <span class="material-symbols-outlined text-primary">psychology</span>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface">Habla con Naturalidad</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Modelos de lenguaje personalizados que mantienen la voz de tu marca y manejan errores o jerga con elegancia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section class="py-xl bg-surface" id="how-it-works" aria-labelledby="how-heading">
+  <div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+    <div class="text-center mb-xl">
+      <p class="font-label-md text-label-md text-primary uppercase tracking-widest mb-md">Flujo de Implementación</p>
+      <h2 id="how-heading" class="font-headline-lg text-headline-lg text-on-surface">En Vivo en Tres Simples Pasos</h2>
+    </div>
+
+    <div class="relative flex flex-col md:flex-row justify-between items-start md:items-center gap-xl md:gap-lg" aria-label="Pasos de configuración">
+      <div class="hidden md:block absolute top-10 left-[14%] right-[14%] h-[2px] circuit-line -z-0" aria-hidden="true"></div>
+
+      <div class="relative z-10 flex flex-col items-center text-center max-w-[260px] mx-auto md:mx-0">
+        <div class="step-connector relative w-20 h-20 rounded-full bg-white border-4 border-primary flex items-center justify-center mb-md shadow-md">
+          <span class="material-symbols-outlined text-primary text-4xl">how_to_reg</span>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm mb-base">Regístrate</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Crea tu cuenta y verifica el perfil comercial de tu restaurante. Tarda menos de 5 minutos.</p>
+      </div>
+
+      <div class="relative z-10 flex flex-col items-center text-center max-w-[260px] mx-auto md:mx-0">
+        <div class="step-connector relative w-20 h-20 rounded-full bg-white border-4 border-primary flex items-center justify-center mb-md shadow-md">
+          <span class="material-symbols-outlined text-primary text-4xl">upload_file</span>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm mb-base">Sube Tu Menú</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Sube el PDF de tu menú o vincula tu POS. Gabot aprende tu oferta completa al instante.</p>
+      </div>
+
+      <div class="relative z-10 flex flex-col items-center text-center max-w-[260px] mx-auto md:mx-0">
+        <div class="w-20 h-20 rounded-full bg-primary flex items-center justify-center mb-md shadow-md">
+          <span class="material-symbols-outlined filled text-on-primary text-4xl">rocket_launch</span>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm mb-base">¡Activa!</h3>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Conecta tu número de WhatsApp Business y empieza a recibir pedidos automatizados de inmediato.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRICING ═══ -->
+<section class="py-xl bg-surface-container-low" id="pricing" aria-labelledby="pricing-heading">
+  <div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+    <div class="text-center mb-xl">
+      <p class="font-label-md text-label-md text-primary uppercase tracking-widest mb-md">Planes de Servicio</p>
+      <h2 id="pricing-heading" class="font-headline-lg text-headline-lg text-on-surface mb-md">Precios Simples y Transparentes</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant">Sin costos ocultos. Sin contratos. Cancela cuando quieras.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-lg items-end" role="list" aria-label="Planes de precios">
+
+      <div class="p-lg rounded-2xl border border-outline-variant bg-white flex flex-col gap-md" role="listitem" aria-label="Plan Starter">
+        <div class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Starter</div>
+        <div class="flex items-baseline gap-xs">
+          <span class="text-4xl font-bold text-on-surface" aria-label="29 dólares por mes">$29</span>
+          <span class="text-on-surface-variant font-body-sm">/mes</span>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Ideal para food trucks o pequeñas cafeterías que empiezan a crecer.</p>
+        <ul class="flex flex-col gap-sm py-md" aria-label="Características incluidas">
+          <li class="flex items-center gap-sm font-body-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Hasta 500 pedidos/mes
+          </li>
+          <li class="flex items-center gap-sm font-body-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> 1 línea de WhatsApp
+          </li>
+          <li class="flex items-center gap-sm font-body-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Menú de hasta 50 artículos
+          </li>
+          <li class="flex items-center gap-sm font-body-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Soporte por email
+          </li>
+        </ul>
+        <a href="#contact" class="w-full border-2 border-primary text-primary font-label-md text-label-md py-base rounded-xl hover:bg-primary/5 transition-all text-center" aria-label="Elegir plan Starter">Elegir Starter</a>
+      </div>
+
+      <div class="p-lg rounded-2xl border-2 border-primary bg-white shadow-xl flex flex-col gap-md relative scale-105" role="listitem" aria-label="Plan Professional, el más popular">
+        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-lg py-1 rounded-full font-label-sm text-label-sm uppercase font-bold tracking-wider" aria-label="Plan más popular">Recomendado</div>
+        <div class="font-label-md text-label-md text-primary uppercase tracking-widest">Professional</div>
+        <div class="flex items-baseline gap-xs">
+          <span class="text-5xl font-bold text-on-background" aria-label="79 dólares por mes">$79</span>
+          <span class="text-on-surface-variant font-body-sm">/mes</span>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Para restaurantes con flujo alto y múltiples sedes.</p>
+        <ul class="flex flex-col gap-sm py-md" aria-label="Características incluidas">
+          <li class="flex items-center gap-sm font-body-sm text-on-surface font-medium">
+            <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Pedidos ilimitados
+          </li>
+          <li class="flex items-center gap-sm font-body-sm text-on-surface font-medium">
+            <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Integración directa con POS
+          </li>
+          <li class="flex items-center gap-sm font-body-sm text-on-surface font-medium">
+            <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Entrenamiento de voz personalizado
+          </li>
+          <li class="flex items-center gap-sm font-body-sm text-on-surface font-medium">
+            <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Soporte prioritario 24/7
+          </li>
+          <li class="flex items-center gap-sm font-body-sm text-on-surface font-medium">
+            <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Analítica avanzada
+          </li>
+        </ul>
+        <a href="#contact" class="w-full bg-primary text-on-primary font-label-md text-label-md py-md rounded-xl shadow-md hover:opacity-90 transition-all text-center" aria-label="Empezar con plan Professional">Empezar con Pro</a>
+      </div>
+
+      <div class="p-lg rounded-2xl border border-outline-variant bg-white flex flex-col gap-md" role="listitem" aria-label="Plan Enterprise">
+        <div class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Enterprise</div>
+        <div class="text-4xl font-bold text-on-surface" aria-label="Precio personalizado">Personalizado</div>
+        <p class="font-body-sm text-body-sm text-on-surface-variant">Para cadenas nacionales, franquicias y grandes grupos de hostelería.</p>
+        <ul class="flex flex-col gap-sm py-md" aria-label="Características incluidas">
+          <li class="flex items-center gap-sm font-body-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Gerente de cuenta dedicado
+          </li>
+          <li class="flex items-center gap-sm font-body-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Garantía SLA de tiempo de actividad
+          </li>
+          <li class="flex items-center gap-sm font-body-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Acceso API para desarrollos propios
+          </li>
+          <li class="flex items-center gap-sm font-body-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary text-[18px]">check_circle</span> Soporte multi-sede
+          </li>
+        </ul>
+        <a href="#contact" class="w-full border-2 border-primary text-primary font-label-md text-label-md py-base rounded-xl hover:bg-primary/5 transition-all text-center" aria-label="Contactar ventas para plan Enterprise">Contactar Ventas</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="py-xl bg-surface-container-lowest" id="testimonials" aria-labelledby="testimonials-heading">
+  <div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+    <div class="text-center mb-xl">
+      <p class="font-label-md text-label-md text-primary uppercase tracking-widest mb-md">Reseñas de Clientes</p>
+      <h2 id="testimonials-heading" class="font-headline-lg text-headline-lg text-on-surface">Con la Confianza de las Mejores Cocinas</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-xl" role="list" aria-label="Testimonios de clientes">
+
+      <article class="bg-white p-xl rounded-2xl shadow-sm border border-outline-variant/30 relative" role="listitem">
+        <span class="material-symbols-outlined filled text-primary-fixed-dim text-6xl absolute top-6 right-6 opacity-20" aria-hidden="true">format_quote</span>
+        <div class="flex gap-xs mb-md" aria-label="5 de 5 estrellas">
+          <span class="material-symbols-outlined filled text-primary text-[18px]" aria-hidden="true">star</span>
+          <span class="material-symbols-outlined filled text-primary text-[18px]" aria-hidden="true">star</span>
+          <span class="material-symbols-outlined filled text-primary text-[18px]" aria-hidden="true">star</span>
+          <span class="material-symbols-outlined filled text-primary text-[18px]" aria-hidden="true">star</span>
+          <span class="material-symbols-outlined filled text-primary text-[18px]" aria-hidden="true">star</span>
+        </div>
+        <blockquote class="font-body-lg text-body-lg text-on-surface italic mb-lg">
+          "Gabot lo cambió todo para nosotros. Solíamos perder un 20% de los pedidos en las horas pico de los viernes porque las líneas estaban ocupadas. Ahora, Gabot maneja 10 chats a la vez y no se le escapa ni un taco."
+        </blockquote>
+        <footer class="flex items-center gap-md">
+          <div class="w-14 h-14 rounded-full bg-surface-dim overflow-hidden flex-shrink-0">
+            <img alt="Carlos M., dueño de Tacos El Primo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl73VGeubPPUQJWzTBrbOZQPIE9k1GIrUxNZrmcGse_08Cr6DE3AkhzcI7K1OfDHB8A8AgISGmcRkPMqDWjZsugWOpDCEPkak6fRpIp504jWpDgAmiFM7w6Smdnn7_XdLD1ekDyCE28__3hM1mGDv13o0YsctrxMVlsquOUnfAlZYJCgraQmdtqdLsUY2E0vtN9L8rUcHDxVGWRKG-DyTzA_hv5cRXP1rLVwC94HPIvG_IlzKC_qocstBFjTvTalu8jwpk90XEabU" loading="lazy" />
+          </div>
+          <div>
+            <cite class="font-headline-sm text-[18px] not-italic text-on-surface">Carlos M.</cite>
+            <p class="text-on-surface-variant text-sm">Dueño, Tacos El Primo</p>
+          </div>
+        </footer>
+      </article>
+
+      <article class="bg-white p-xl rounded-2xl shadow-sm border border-outline-variant/30 relative" role="listitem">
+        <span class="material-symbols-outlined filled text-primary-fixed-dim text-6xl absolute top-6 right-6 opacity-20" aria-hidden="true">format_quote</span>
+        <div class="flex gap-xs mb-md" aria-label="5 de 5 estrellas">
+          <span class="material-symbols-outlined filled text-primary text-[18px]" aria-hidden="true">star</span>
+          <span class="material-symbols-outlined filled text-primary text-[18px]" aria-hidden="true">star</span>
+          <span class="material-symbols-outlined filled text-primary text-[18px]" aria-hidden="true">star</span>
+          <span class="material-symbols-outlined filled text-primary text-[18px]" aria-hidden="true">star</span>
+          <span class="material-symbols-outlined filled text-primary text-[18px]" aria-hidden="true">star</span>
+        </div>
+        <blockquote class="font-body-lg text-body-lg text-on-surface italic mb-lg">
+          "El entrenamiento del menú es increíble. Subí mi carta de café una vez y ya sabía cómo manejar pedidos complejos, sugiriendo productos adicionales a la perfección. Se pagó solo en la primera semana."
+        </blockquote>
+        <footer class="flex items-center gap-md">
+          <div class="w-14 h-14 rounded-full bg-surface-dim overflow-hidden flex-shrink-0">
+            <img alt="Daniela R., gerente de Café Verde" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATdnWWs-0OtETicZJrknXB1DJNqtpbFBvggT01OP1a2J7o6d6rBcLq7wgt2Qcs4kyEtLwZK99Dy6IBeywJhJ5JtN2lte8EGhrNc5A8h4_5EnEPtP_Ckw5NQhK9QmhKWikRoVLS7IXtowoN0QlNGbS0gnUJlI8v8w07Kyu0DVyFyJ02lwUsQM1LxdWyM_jKURfQadg2RcpHpyNJmAsHSBASCPfKoxtF7wDeRPTcRPt1pt2P0wBc1rROShO4qDv-i_yFkqJ1i1ea2Jc" loading="lazy" />
+          </div>
+          <div>
+            <cite class="font-headline-sm text-[18px] not-italic text-on-surface">Daniela R.</cite>
+            <p class="text-on-surface-variant text-sm">Gerente, Café Verde</p>
+          </div>
+        </footer>
+      </article>
+
+    </div>
+  </div>
+
+<!-- ═══ CONTACT / CTA ═══ -->
+<section class="py-xl bg-inverse-surface" id="contact" aria-labelledby="contact-heading">
+  <div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto grid md:grid-cols-2 gap-xl items-start">
+
+    <!-- Left: copy + trust bullets -->
+    <div class="flex flex-col gap-lg">
+      <div>
+        <p class="font-label-md text-label-md text-primary-fixed uppercase tracking-widest mb-md">Piloto Gratuito de 30 Días</p>
+        <h2 id="contact-heading" class="font-headline-lg text-headline-lg text-inverse-on-surface mb-md">¿Listo para tu auditoría gratuita?</h2>
+        <p class="font-body-lg text-body-lg text-on-surface-variant">Cuéntanos sobre tu restaurante y te mostraremos exactamente cuántos pedidos estás perdiendo — sin compromiso.</p>
+      </div>
+      <ul class="flex flex-col gap-md" aria-label="Beneficios del piloto">
+        <li class="flex items-start gap-md">
+          <span class="material-symbols-outlined filled text-primary-fixed mt-1 text-[22px]" aria-hidden="true">verified</span>
+          <div>
+            <h3 class="font-headline-sm text-headline-sm text-inverse-on-surface">Sin tarjeta de crédito</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">30 días de acceso completo sin cargo. Sin trampa.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-md">
+          <span class="material-symbols-outlined filled text-primary-fixed mt-1 text-[22px]" aria-hidden="true">support_agent</span>
+          <div>
+            <h3 class="font-headline-sm text-headline-sm text-inverse-on-surface">Onboarding personalizado</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Un especialista te guía a través de la configuración y el entrenamiento del menú.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-md">
+          <span class="material-symbols-outlined filled text-primary-fixed mt-1 text-[22px]" aria-hidden="true">trending_up</span>
+          <div>
+            <h3 class="font-headline-sm text-headline-sm text-inverse-on-surface">ROI garantizado en el primer mes</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Si no recuperas el costo de suscripción en pedidos adicionales, te devolvemos el dinero.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right: form card -->
+    <div class="bg-surface-container-lowest rounded-2xl p-lg shadow-2xl">
+      <h3 class="font-headline-sm text-headline-sm text-on-surface mb-lg">Solicitar Auditoría Gratuita</h3>
+      <form action="#" method="post" class="flex flex-col gap-md" aria-label="Formulario de contacto" novalidate>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+          <div class="flex flex-col gap-xs">
+            <label for="contact-nombre" class="font-label-sm text-label-sm text-on-surface-variant">Nombre completo *</label>
+            <input
+              id="contact-nombre"
+              name="nombre"
+              type="text"
+              required
+              autocomplete="name"
+              placeholder="Tu nombre"
+              class="rounded-xl border border-outline bg-white px-md py-base font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"
+              aria-required="true"
+            />
+          </div>
+          <div class="flex flex-col gap-xs">
+            <label for="contact-restaurante" class="font-label-sm text-label-sm text-on-surface-variant">Restaurante *</label>
+            <input
+              id="contact-restaurante"
+              name="restaurante"
+              type="text"
+              required
+              autocomplete="organization"
+              placeholder="Nombre del restaurante"
+              class="rounded-xl border border-outline bg-white px-md py-base font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"
+              aria-required="true"
+            />
+          </div>
+        </div>
+        <div class="flex flex-col gap-xs">
+          <label for="contact-email" class="font-label-sm text-label-sm text-on-surface-variant">Correo electrónico *</label>
+          <input
+            id="contact-email"
+            name="email"
+            type="email"
+            required
+            autocomplete="email"
+            placeholder="tu@restaurante.com"
+            class="rounded-xl border border-outline bg-white px-md py-base font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"
+            aria-required="true"
+          />
+        </div>
+        <div class="flex flex-col gap-xs">
+          <label for="contact-mensaje" class="font-label-sm text-label-sm text-on-surface-variant">Cuéntanos sobre tu restaurante</label>
+          <textarea
+            id="contact-mensaje"
+            name="mensaje"
+            rows="4"
+            placeholder="¿Cuántos pedidos diarios manejas? ¿Usas WhatsApp Business?"
+            class="rounded-xl border border-outline bg-white px-md py-base font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition resize-none"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="w-full bg-primary text-on-primary font-label-md text-label-md py-md rounded-xl shadow-md hover:opacity-90 active:scale-95 transition-all"
+          aria-label="Enviar solicitud de auditoría gratuita"
+        >
+          Solicitar Auditoría Gratuita
+        </button>
+        <p class="font-body-sm text-body-sm text-on-surface-variant text-center" aria-live="polite" id="form-status"></p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="bg-inverse-surface pt-xl pb-lg" role="contentinfo">
+  <div class="px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto">
+
+    <!-- 4-column grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-xl mb-xl">
+
+      <!-- Brand column -->
+      <div class="col-span-2 md:col-span-1 flex flex-col gap-md">
+        <a href="#" aria-label="Gabot — ir al inicio" class="flex items-center gap-sm">
+          <span class="material-symbols-outlined filled text-primary-fixed text-3xl" aria-hidden="true">smart_toy</span>
+          <span class="font-headline-sm text-headline-sm text-inverse-on-surface">Gabot</span>
+        </a>
+        <p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">Sistema operativo de IA para restaurantes. Acepta pedidos por WhatsApp 24/7.</p>
+        <div class="flex items-center gap-xs">
+          <span class="w-2 h-2 rounded-full bg-[#4ade80] animate-pulse" aria-hidden="true"></span>
+          <span class="font-label-sm text-label-sm text-on-surface-variant">Todos los sistemas operativos</span>
+        </div>
+      </div>
+
+      <!-- Producto -->
+      <nav aria-label="Sección Producto">
+        <h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-md">Producto</h4>
+        <ul class="flex flex-col gap-sm" role="list">
+          <li><a href="#features" class="font-body-sm text-body-sm text-inverse-on-surface hover:text-primary-fixed transition">Funciones</a></li>
+          <li><a href="#pricing" class="font-body-sm text-body-sm text-inverse-on-surface hover:text-primary-fixed transition">Precios</a></li>
+          <li><a href="#how-it-works" class="font-body-sm text-body-sm text-inverse-on-surface hover:text-primary-fixed transition">Cómo funciona</a></li>
+          <li><a href="#contact" class="font-body-sm text-body-sm text-inverse-on-surface hover:text-primary-fixed transition">Demo Gratuita</a></li>
+        </ul>
+      </nav>
+
+      <!-- Empresa -->
+      <nav aria-label="Sección Empresa">
+        <h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-md">Empresa</h4>
+        <ul class="flex flex-col gap-sm" role="list">
+          <li><a href="#" class="font-body-sm text-body-sm text-inverse-on-surface hover:text-primary-fixed transition">Sobre Gabot</a></li>
+          <li><a href="#testimonials" class="font-body-sm text-body-sm text-inverse-on-surface hover:text-primary-fixed transition">Casos de éxito</a></li>
+          <li><a href="mailto:hola@gabot.ai" class="font-body-sm text-body-sm text-inverse-on-surface hover:text-primary-fixed transition">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Legal -->
+      <nav aria-label="Sección Legal">
+        <h4 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-md">Legal</h4>
+        <ul class="flex flex-col gap-sm" role="list">
+          <li><a href="#" class="font-body-sm text-body-sm text-inverse-on-surface hover:text-primary-fixed transition">Privacidad</a></li>
+          <li><a href="#" class="font-body-sm text-body-sm text-inverse-on-surface hover:text-primary-fixed transition">Términos de Servicio</a></li>
+          <li><a href="#" class="font-body-sm text-body-sm text-inverse-on-surface hover:text-primary-fixed transition">Cookies</a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t border-outline-variant/20 pt-lg flex flex-col sm:flex-row items-center justify-between gap-md">
+      <p class="font-body-sm text-body-sm text-on-surface-variant text-center sm:text-left">
+        &copy; 2026 Gabot AI. Todos los derechos reservados. Hecho con amor en Colombia 🇨🇴
+      </p>
+      <div class="flex gap-md" role="list" aria-label="Redes sociales">
+        <a href="#" class="text-on-surface-variant hover:text-primary-fixed transition" aria-label="Gabot en Instagram" role="listitem">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="#" class="text-on-surface-variant hover:text-primary-fixed transition" aria-label="Gabot en LinkedIn" role="listitem">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<!-- ═══ MOBILE BOTTOM NAV ═══ -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-surface/95 border-t border-outline-variant/30 pb-safe" id="mobile-bottom-nav" aria-label="Navegación móvil inferior" role="navigation">
+  <div class="flex justify-around items-center h-16">
+
+    <a href="#hero" class="mobile-nav-tab flex flex-col items-center gap-[2px] px-sm py-xs flex-1 text-center group" aria-label="Inicio" data-section="hero">
+      <span class="material-symbols-outlined text-[22px] text-on-surface-variant group-[.active]:text-primary transition-colors" aria-hidden="true">home</span>
+      <span class="font-label-sm text-[11px] text-on-surface-variant group-[.active]:text-primary transition-colors">Inicio</span>
+    </a>
+
+    <a href="#features" class="mobile-nav-tab flex flex-col items-center gap-[2px] px-sm py-xs flex-1 text-center group" aria-label="Funciones" data-section="features">
+      <span class="material-symbols-outlined text-[22px] text-on-surface-variant group-[.active]:text-primary transition-colors" aria-hidden="true">auto_awesome</span>
+      <span class="font-label-sm text-[11px] text-on-surface-variant group-[.active]:text-primary transition-colors">Funciones</span>
+    </a>
+
+    <a href="#pricing" class="mobile-nav-tab flex flex-col items-center gap-[2px] px-sm py-xs flex-1 text-center group" aria-label="Precios" data-section="pricing">
+      <span class="material-symbols-outlined text-[22px] text-on-surface-variant group-[.active]:text-primary transition-colors" aria-hidden="true">sell</span>
+      <span class="font-label-sm text-[11px] text-on-surface-variant group-[.active]:text-primary transition-colors">Precios</span>
+    </a>
+
+    <a href="#contact" class="mobile-nav-tab flex flex-col items-center gap-[2px] px-sm py-xs flex-1 text-center group" aria-label="Contacto" data-section="contact">
+      <span class="material-symbols-outlined text-[22px] text-on-surface-variant group-[.active]:text-primary transition-colors" aria-hidden="true">chat_bubble</span>
+      <span class="font-label-sm text-[11px] text-on-surface-variant group-[.active]:text-primary transition-colors">Contacto</span>
+    </a>
+
+  </div>
+</nav>
+
+<!-- ═══ JAVASCRIPT ═══ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ── Mobile menu toggle ── */
+  const hamburger = document.getElementById('nav-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('hidden');
+      hamburger.setAttribute('aria-expanded', String(!open));
+    });
+    document.addEventListener('click', (e) => {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  /* ── Smooth scroll for all anchor links ── */
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+      const target = document.querySelector(anchor.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  /* ── Active nav highlight (IntersectionObserver) ── */
+  const sections = document.querySelectorAll('section[id], footer[id]');
+  const desktopLinks = document.querySelectorAll('#main-nav a[href^="#"]');
+  const mobileNavTabs = document.querySelectorAll('.mobile-nav-tab');
+
+  function setActiveNav(id) {
+    desktopLinks.forEach((link) => {
+      const active = link.getAttribute('href') === '#' + id;
+      link.classList.toggle('text-primary', active);
+      link.classList.toggle('font-semibold', active);
+    });
+    mobileNavTabs.forEach((tab) => {
+      const active = tab.dataset.section === id;
+      tab.classList.toggle('active', active);
+    });
+  }
+
+  if (sections.length) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveNav(entry.target.id);
+        });
+      },
+      { rootMargin: '-30% 0px -60% 0px' }
+    );
+    sections.forEach((s) => observer.observe(s));
+  }
+
+  /* ── Contact form handler ── */
+  const form = document.querySelector('form[action="#"]');
+  const formStatus = document.getElementById('form-status');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.textContent;
+      btn.textContent = 'Enviando…';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.disabled = false;
+        if (formStatus) {
+          formStatus.textContent = '¡Mensaje recibido! Te contactaremos en menos de 24 horas.';
+          formStatus.classList.add('text-primary');
+        }
+        form.reset();
+      }, 1200);
+    });
+  }
+
+  /* ── Bento-card scroll reveal (IntersectionObserver) ── */
+  const bentoCards = document.querySelectorAll('.bento-card');
+  if (bentoCards.length && 'IntersectionObserver' in window) {
+    bentoCards.forEach((card) => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    });
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: '0px 0px -10% 0px' }
+    );
+    bentoCards.forEach((card) => revealObserver.observe(card));
+  }
+})();
+</script>
+
+</main>
+</body>
+</html>
