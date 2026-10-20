@@ -14,6 +14,10 @@ for page in privacidad.html terminos.html eliminacion-datos.html; do
   check "$page links home" "grep -q 'href=\"/\"' $page 2>/dev/null"
 done
 
+for page in privacidad.html terminos.html; do
+  check "$page shows postal address" "grep -q 'Calle 20 # 14-72, Santa Rosa de Cabal, Risaralda' $page 2>/dev/null"
+done
+
 check "privacy cites Ley 1581" "grep -q 'Ley 1581 de 2012' privacidad.html 2>/dev/null"
 check "privacy discloses WhatsApp/Meta" "grep -q 'WhatsApp' privacidad.html 2>/dev/null && grep -q 'Meta' privacidad.html 2>/dev/null"
 check "privacy discloses OpenAI" "grep -q 'OpenAI' privacidad.html 2>/dev/null"
