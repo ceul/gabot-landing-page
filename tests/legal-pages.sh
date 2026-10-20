@@ -20,7 +20,10 @@ done
 
 check "privacy cites Ley 1581" "grep -q 'Ley 1581 de 2012' privacidad.html 2>/dev/null"
 check "privacy discloses WhatsApp/Meta" "grep -q 'WhatsApp' privacidad.html 2>/dev/null && grep -q 'Meta' privacidad.html 2>/dev/null"
-check "privacy discloses OpenAI" "grep -q 'OpenAI' privacidad.html 2>/dev/null"
+check "privacy discloses DeepSeek (LLM)" "grep -q 'DeepSeek' privacidad.html 2>/dev/null"
+check "privacy discloses Groq (audio)" "grep -q 'Groq' privacidad.html 2>/dev/null"
+check "privacy does not name OpenAI as processor" "! grep -q 'OpenAI' privacidad.html 2>/dev/null"
+check "privacy discloses transfer to China" "grep -q 'China' privacidad.html 2>/dev/null"
 check "privacy links data deletion" "grep -q 'href=\"/eliminacion-datos.html\"' privacidad.html 2>/dev/null"
 check "deletion page explains how to request" "grep -qi 'solicitud' eliminacion-datos.html 2>/dev/null"
 
